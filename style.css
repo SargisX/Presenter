@@ -7,13 +7,13 @@ body {
     height: 100vh;
     background: #111;
     color: white;
-  }
+}
 
-  #mediaContainer {
+#mediaContainer {
     object-fit: cover;
-  }
-  
-  #enterBtn {
+}
+
+#enterBtn {
     padding: 16px 28px;
     border: none;
     border-radius: 8px;
@@ -21,9 +21,9 @@ body {
     color: white;
     font-size: 18px;
     cursor: pointer;
-  }
-  
-  #viewer {
+}
+
+#viewer {
     position: fixed;
     inset: 0;
     background: black;
@@ -31,31 +31,32 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-  
-  video, img {
+}
+
+video,
+img {
     max-width: 100vw;
     max-height: auto;
-  }
-  
-  #controls {
+}
+
+#controls {
     position: absolute;
     bottom: 20px;
     display: flex;
     gap: 30px;
     justify-content: center;
-  }
-  
-  .ctrlBtn {
+}
+
+.ctrlBtn {
     padding: 12px 22px;
     background: #333;
     border-radius: 6px;
     cursor: pointer;
     user-select: none;
     font-size: 18px;
-  }
-  
-  #fsBtn {
+}
+
+#fsBtn {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -64,5 +65,18 @@ body {
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.8rem;
-  }
-  
+}
+
+
+#controls,
+#fsBtn {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#controls.hide,
+#fsBtn.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    /* prevents accidental clicks */
+}
